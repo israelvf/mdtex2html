@@ -23,11 +23,13 @@ TeX-Formula: $\sqrt2=x^2 \Rightarrow x=\sqrt{\sqrt{2}}$
 
 install it, i.e. using pip:
 
-`python3 -m pip install mdtex2html`
+~~`python3 -m pip install mdtex2html`~~
+(comming soon)
 
 then in python import in your code with
 
-`import mdtex2html`
+~~`import mdtex2html`~~
+(comming soon)
 
 and convert your mdTeX with something like
 
@@ -51,30 +53,23 @@ You may want to (but don't need to) include this css-snippet on your page to hid
 }
 ```
 
-### Markdown-Extensions
+### Markdown2 Extras (aka extensions)
 
-Starting with v1.1 you can use python-markdown-extensions for i.e. tables, definition-lists, html-attributes and much more by passing a list of the extension(s) to be used to the `convert`-command as described in the [python-markdown documentation](https://python-markdown.github.io/extensions/).
+You can use markdown2 extras for i.e. tables, definition-lists, html-attributes and much more by passing a list of the extension(s) to be used to the `markdown`-command as described in the [markdown2 documentation](https://github.com/trentm/python-markdown2/wiki/Extras).
 
-For example `mdtex2html.convert('Hello green\n{: style="color:green" }', extensions=['attr_list'])` will make use of the extension `attr_list`.
+For example `markdown2.markdown("*boo!*", extras=["footnotes"])` will make use of the extension `footnotes`.
 
 ## Dependencies
 
 This depends on:
 
 - [latex2html](https://github.com/roniemartinez/latex2mathml)
-- [Python-Markdown](https://github.com/Python-Markdown/markdown)
+- [Python-Markdown2](https://github.com/trentm/python-markdown2)
 
 The dependencies will be installed when installing using pip.
 
-## Limitations
-
-The Firefox browser will display the result smoothly, as well as Safari (according to user reports).
-
-~~Just be aware that the Chromium-engine (Browsers: Chrome, Edge, ...) still is not able to render MathML properly, but rumors say that in 2020 work has started again to make that happen, so maybe you want to check the status there.~~
-In 2023 MathML Core got finally supported by the Blink-Engine of Chrome (and therefore Edge etc.). So this works now in all mainstream-browsers.
-
 ## Credits
 
-Special thanks to [Ronie Martinez](https://github.com/roniemartinez) for creating [latex2html](https://github.com/roniemartinez/latex2mathml)!
+Special thanks to [Dirk Winkel](https://github.com/polarwinkel), for creating [mdtex2html](https://github.com/polarwinkel/mdtex2html), [Ronie Martinez](https://github.com/roniemartinez), for creating [latex2html](https://github.com/roniemartinez/latex2mathml), and [Trent Mick](https://github.com/trentm), for creating [Python-Markdown2](https://github.com/trentm/python-markdown2)!
 
-This library is just a few lines of code added to his work and to [Python-Markdown](https://github.com/Python-Markdown/markdown).
+This library is just a few adjustments of [Dirk Winkel](https://github.com/polarwinkel) [code](https://github.com/polarwinkel/mdtex2html), to use [Python-Markdown2](https://github.com/trentm/python-markdown2) instead of [Python-Markdown](https://github.com/Python-Markdown/markdown).
